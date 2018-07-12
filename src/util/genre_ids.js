@@ -89,4 +89,4 @@ const genreIdsToString = genre_ids => {
   return genre_names.join(" | ");
 };
 
-export default genreIdsToString;
+export { genreIdsToString as default, genres };
