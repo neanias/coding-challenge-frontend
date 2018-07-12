@@ -1,0 +1,13 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(4, [col] 1fr);
+  grid-gap: 5px;
+}
+
+.App-Movies {
+  grid-column: 2 / 4;
+}
+
+.App-empty {
+  text-align: center;
+}
