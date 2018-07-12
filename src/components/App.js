@@ -93,11 +93,33 @@ class App extends Component {
       <div className="App">
         <SideNav fixed>
           <SideNavItem>
-            <h3>Wesley</h3>
+            <h3>
+              <strong>Wesley</strong>
+            </h3>
           </SideNavItem>
           <SideNavItem className="active">
             <Icon right>search</Icon>
             <p>Discover</p>
+          </SideNavItem>
+          <SideNavItem>
+            <h4>Watched</h4>
+          </SideNavItem>
+          <SideNavItem divider />
+          <SideNavItem subheader>
+            <p>Movies</p>
+          </SideNavItem>
+          <SideNavItem subheader>
+            <p>TV Shows</p>
+          </SideNavItem>
+          <SideNavItem>
+            <h4>Saved</h4>
+          </SideNavItem>
+          <SideNavItem divider />
+          <SideNavItem subheader>
+            <p>Movies</p>
+          </SideNavItem>
+          <SideNavItem subheader>
+            <p>TV Shows</p>
           </SideNavItem>
         </SideNav>
         <div className="App-Movies">
