@@ -12,12 +12,15 @@ class App extends Component {
 
     this.state = {
       searchResults: [],
-      totalResults: 0
+      totalResults: 0,
+      filters: []
     };
 
     this.API_KEY = "b5a99a1443a24e1533031d476b782574";
 
     this.search = this.search.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.genreFilter = this.genreFilter.bind(this);
   }
 
   search(query) {
@@ -31,9 +34,34 @@ class App extends Component {
       .then(data => {
         this.setState({
           searchResults: data.data.results,
-          totalResults: data.data.total_results
+          totalResults: data.data.total_results,
+          filters: this.state.filters
         });
       });
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const genre_id = target.name;
+
+    let newFilters = this.state.filters;
+    if (value) {
+      newFilters.push(parseInt(genre_id, 10));
+    } else if (newFilters.length === 1) {
+      newFilters = [];
+    } else {
+      const idx = newFilters.indexOf(genre_id);
+      newFilters.splice(idx + 1, 1);
+    }
+
+    this.setState({
+      filters: newFilters
+    });
+  }
+
+  genreFilter(genre_id) {
+    return this.state.filters.indexOf(genre_id) !== -1;
   }
 
   render() {
@@ -50,6 +78,10 @@ class App extends Component {
             genre_ids={result.genre_ids}
             overview={result.overview}
             release_date={result.release_date}
+            hidden={
+              this.state.filters.length > 0 &&
+              !result.genre_ids.some(this.genreFilter)
+            }
           />
         );
       });
@@ -75,7 +107,10 @@ class App extends Component {
           <main>{movies}</main>
         </div>
         <aside>
-          <SearchForm search={this.search} />
+          <SearchForm
+            search={this.search}
+            handleInputChange={this.handleInputChange}
+          />
         </aside>
       </div>
     );

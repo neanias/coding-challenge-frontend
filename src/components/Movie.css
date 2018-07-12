@@ -33,3 +33,6 @@ span.badge.Movie-rating {
   color: #fff;
 }
 
+.hidden {
+  display: none;
+}

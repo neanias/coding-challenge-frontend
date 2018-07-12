@@ -15,8 +15,13 @@ class Movie extends Component {
   }
 
   render() {
+    let className = "Movie";
+    if (this.props.hidden) {
+      className += " hidden";
+    }
+
     return (
-      <div className="Movie">
+      <div className={className}>
         <div className="Movie-poster">
           <img
             src={this.posterLink(this.props.poster_path)}
@@ -43,7 +48,8 @@ Movie.propTypes = {
   vote_average: PropTypes.number,
   genre_ids: PropTypes.array,
   overview: PropTypes.string,
-  release_date: PropTypes.string
+  release_date: PropTypes.string,
+  hidden: PropTypes.bool
 };
 
 export default Movie;
