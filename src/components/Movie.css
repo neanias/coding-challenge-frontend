@@ -1,0 +1,36 @@
+.Movie {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.Movie-poster {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.Movie-poster img {
+  padding-top: 30px;
+  max-width: 200px;
+  max-height: 450px;
+}
+
+.Movie-content {
+  grid-column: 2 / 4;
+  grid-row: 1;
+}
+
+.Movie-genres {
+  color: rgb(217, 222, 51);
+}
+
+.Movie-release_date {
+  color: rgb(217, 222, 58);
+}
+
+span.badge.Movie-rating {
+  background-color: rgb(217, 222, 58);
+  color: #fff;
+}
+
