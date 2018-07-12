@@ -43,16 +43,16 @@ class App extends Component {
   handleInputChange(event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const genre_id = target.name;
+    const genre_id = parseInt(target.name, 10);
 
     let newFilters = this.state.filters;
     if (value) {
-      newFilters.push(parseInt(genre_id, 10));
+      newFilters.push(genre_id);
     } else if (newFilters.length === 1) {
       newFilters = [];
     } else {
       const idx = newFilters.indexOf(genre_id);
-      newFilters.splice(idx + 1, 1);
+      newFilters.splice(idx, 1);
     }
 
     this.setState({
