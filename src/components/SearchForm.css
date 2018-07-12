@@ -1,3 +1,5 @@
 .SearchForm-form {
   position: fixed;
+  overflow-y: scroll;
+  height: 100%;
 }
