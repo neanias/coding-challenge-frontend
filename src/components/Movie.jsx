@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Badge } from 'react-materialize';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Badge } from "react-materialize";
 
-import './Movie.css';
+import "./Movie.css";
 
-import genre_ids from '../util/genre_ids';
+import genre_ids from "../util/genre_ids";
 
 class Movie extends Component {
   POSTER_WIDTH = 300;
@@ -18,7 +18,10 @@ class Movie extends Component {
     return (
       <div className="Movie">
         <div className="Movie-poster">
-          <img src={this.posterLink(this.props.poster_path)} alt={this.props.title} />
+          <img
+            src={this.posterLink(this.props.poster_path)}
+            alt={this.props.title}
+          />
         </div>
         <div className="Movie-content">
           <h3>
@@ -40,7 +43,7 @@ Movie.propTypes = {
   vote_average: PropTypes.number,
   genre_ids: PropTypes.array,
   overview: PropTypes.string,
-  release_date: PropTypes.string,
-}
+  release_date: PropTypes.string
+};
 
 export default Movie;

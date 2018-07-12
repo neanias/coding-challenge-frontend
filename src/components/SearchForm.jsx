@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { Button, Icon } from 'react-materialize';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import { Button, Icon } from "react-materialize";
+import PropTypes from "prop-types";
 
-import './SearchForm.css';
+import "./SearchForm.css";
 
 class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-    }
+      value: ""
+    };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -33,16 +33,19 @@ class SearchForm extends Component {
             value={this.state.value}
             onChange={this.handleChange}
             placeholder="e.g. Back to the Future"
-            required />
+            required
+          />
         </div>
-        <Button waves="light" type="submit"><Icon>search</Icon></Button>
+        <Button waves="light" type="submit">
+          <Icon>search</Icon>
+        </Button>
       </form>
     );
   }
 }
 
 SearchForm.propTypes = {
-  search: PropTypes.func,
-}
+  search: PropTypes.func
+};
 
 export default SearchForm;
