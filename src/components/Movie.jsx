@@ -10,11 +10,15 @@ class Movie extends Component {
   POSTER_WIDTH = 300;
   POSTER_HEIGHT = 450;
 
+  posterLink(posterPath) {
+    return `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${posterPath}`;
+  }
+
   render() {
     return (
       <div className="Movie">
         <div className="Movie-poster">
-          <img src={this.props.poster_link} alt={this.props.title} />
+          <img src={this.posterLink(this.props.poster_path)} alt={this.props.title} />
         </div>
         <div className="Movie-content">
           <h3>
@@ -31,7 +35,7 @@ class Movie extends Component {
 }
 
 Movie.propTypes = {
-  poster_link: PropTypes.string,
+  poster_path: PropTypes.string,
   title: PropTypes.string,
   vote_average: PropTypes.number,
   genre_ids: PropTypes.array,

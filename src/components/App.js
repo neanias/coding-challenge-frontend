@@ -34,10 +34,6 @@ class App extends Component {
     });
   }
 
-  posterLink(posterPath) {
-    return `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${posterPath}`;
-  }
-
   render() {
     let movies;
 
@@ -45,7 +41,7 @@ class App extends Component {
       movies = this.state.searchResults.map(result => {
         return (<Movie
           key={result.id}
-          poster_link={this.posterLink(result.poster_path)}
+          poster_path={result.poster_path}
           title={result.title}
           vote_average={result.vote_average}
           genre_ids={result.genre_ids}
