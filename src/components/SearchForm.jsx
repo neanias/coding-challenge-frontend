@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 
 import "./SearchForm.css";
 
+import MovieBoxes from "./MovieBoxes";
+
 class SearchForm extends Component {
   constructor(props) {
     super(props);
@@ -39,13 +41,15 @@ class SearchForm extends Component {
         <Button waves="light" type="submit">
           <Icon>search</Icon>
         </Button>
+        <MovieBoxes handleInputChange={this.props.handleInputChange} />
       </form>
     );
   }
 }
 
 SearchForm.propTypes = {
-  search: PropTypes.func
+  search: PropTypes.func,
+  handleInputChange: PropTypes.func
 };
 
 export default SearchForm;
