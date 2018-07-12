@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, Icon } from 'react-materialize';
 import PropTypes from 'prop-types';
 
-//import axios from '../axios';
+import './SearchForm.css';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="SearchForm-form" onSubmit={this.handleSubmit}>
         <div className="input-field inline">
           <input
             type="text"
