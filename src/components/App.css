@@ -1,7 +1,7 @@
 .App {
   display: grid;
   grid-template-columns: repeat(4, [col] 1fr);
-  grid-gap: 5px;
+  grid-gap: 10px;
 }
 
 .App-Movies {
